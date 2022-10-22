@@ -6,7 +6,7 @@ import { db } from "../firebase";
 const Links = () => {
   const [links, setLinks] = useState([]);
   const colRef = collection(db, "Links");
-  
+
   const docs = [];
   const addOrEdit = async (linkObject) => {
     try {
@@ -21,7 +21,7 @@ const Links = () => {
       snapshot.docs.forEach((doc) => {
         docs.push({ ...doc.data().linkObject, id: doc.id });
       });
-      setLinks(docs);
+      setLinks([...docs]);
       console.log(docs);
     });
   };
