@@ -1,4 +1,7 @@
 import Links from "./components/Links";
+import './index.css'
+import {ToastContainer} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 function App() {
   return (
     <div className="container p-4 ">
@@ -6,6 +9,7 @@ function App() {
 
         <Links />
       </div>
+      <ToastContainer/>
     </div>
   );
 }

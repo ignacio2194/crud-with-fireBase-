@@ -1,6 +1,10 @@
-import React, { useState } from "react";
+import { doc, getDoc  } from "firebase/firestore";
+import React, { useEffect, useState } from "react";
+import { db } from "../firebase";
 
-const LinkForm = ({ addOrEdit }) => {
+const LinkForm = ({ addOrEdit,currentId,Links }) => {
+  console.log(currentId)
+
   const initialState = {
     url: "",
     name: "",
@@ -15,7 +19,11 @@ const LinkForm = ({ addOrEdit }) => {
     e.preventDefault();
     addOrEdit(values);
     setValues({ ...initialState });
+  
   };
+
+
+
   return (
     <div>
       <form className="card card-body" onSubmit={handleSubmit}>
